@@ -3,24 +3,22 @@
 const data = [
   {
     title: 'Asteroids 101',
-    image: ''
+    image: 'https://via.placeholder.com/200x100'
   },
   {
     title: 'Life on Mars',
-    image: ''
+    image: 'https://via.placeholder.com/200x100'
   },
   {
     title: 'Martians invade Earth',
-    image: ''
+    image: 'https://via.placeholder.com/200x100'
   },
   {
-    title: 'Humans aren't real',
-    image: ''
+    title: 'Humans aren\'t real',
+    image: 'https://via.placeholder.com/200x100'
   },
   {
     title: 'Space The Final Frontier',
-    image: ''
+    image: 'https://via.placeholder.com/200x100'
   }
 ];
-
-
