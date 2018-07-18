@@ -1,0 +1,18 @@
+{
+	"scss": {
+		"src": "scss/**/*.scss",
+		"dest": "css/"
+	},
+	"js": {
+		"src": [
+      "js/main.js",
+      "js/paco.js"
+		],
+		"dest": "js/"
+	},
+	"images": "images/**/*.{gif,jpg,png,svg}",
+	"html": [
+    "**/*.html",
+    "!node_modules/**/*.*"
+  ]
+}
