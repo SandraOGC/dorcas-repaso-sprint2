@@ -6,8 +6,8 @@ Son opcionales y no sustituyen el repaso personal.
 
 ## Pautas
 1. Clona el repo.
-2. Crea una rama con nuestro nombre (por ejemplo nasiba-carrasco).
-3. Añadiendo ejercicios y avisa cuando tengas algo para revisarlos.
+2. Crea una rama con tu nombre (por ejemplo, carlos-mananas).
+3. Ve añadiendo ejercicios y avisa cuando tengas alguno listo para revisarlo.
 4. Disfruta la fruta.
 
 
