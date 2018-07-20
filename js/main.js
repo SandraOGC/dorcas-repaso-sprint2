@@ -1,7 +1,5 @@
 'use strict';
 
-const element = document.querySelector('.news');
-
 const data = [
   {
     title: 'Asteroids 101',
@@ -25,9 +23,23 @@ const data = [
   }
 ];
 
-for (let i = 0; i < data.length; i++) {
-  element.innerHTML += `<li class="news_item"><h2 class="news__title">${data[i].title}</h2><img class="news__image" src="${data[i].image}" alt="${
-    data[i].title
-  }"> </li>`;
+// 1/ Listado de noticias
+const printNews = (newsData) => {
+  const newsItems = document.querySelector('.news');
+
+  for (const item of newsData) {
+    const newsItem = `
+      <li class="news__item">
+        <h2 class="news__title">${item.title}</h2>
+        <img class="news__image" src="${item.image}" alt="${item.title}">
+      </li>
+    `;
+    newsItems.insertAdjacentHTML('beforeEnd', newsItem);
+  }
 }
+
+printNews(data);
+
+
+
 
