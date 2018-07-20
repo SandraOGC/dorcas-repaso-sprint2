@@ -26,7 +26,6 @@ const data = [
 // 1/ Listado de noticias
 const printNews = (newsData) => {
   const newsItems = document.querySelector('.news');
-
   for (const item of newsData) {
     const newsItem = `
       <li class="news__item">
@@ -36,10 +35,23 @@ const printNews = (newsData) => {
     `;
     newsItems.insertAdjacentHTML('beforeEnd', newsItem);
   }
-}
+};
 
 printNews(data);
 
 
 
+// 2/ Marte, el planeta rojo
+const highlightMarsRelatedNews = () => {
+  const newsItemList = document.querySelectorAll('.news__item');
+
+  for (const item of newsItemList) {
+    const itemTitle = item.querySelector('.news__title').innerHTML;
+    if ( (itemTitle.includes('Mars')) || (itemTitle.includes('Martian')) ) {
+      item.classList.add('news__item--from-mars');
+    }
+  }
+};
+
+highlightMarsRelatedNews();
 
