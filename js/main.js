@@ -1,6 +1,8 @@
 'use strict';
 
 var lista = document.querySelector('.news');
+var listaItem = document.querySelectorAll('.news__item');
+
 
 const data = [
   {
@@ -47,4 +49,16 @@ for (var i = 0; i < data.length; i++){
 
   // para meter el li en el lu
   lista.appendChild(newItems);
+}
+// ejercico2
+
+for (var i = 0; i < listaItem.length; i++){
+  var contentTitle = document.querySelectorAll('.news__title').innerHTML;
+
+  if ( (contentTitle.includes('Mars')) || (contentTitle.includes('Martian')) )  {
+    listaItem.classList.add('news__item--from-mars');
+    console.log('El título contiene la palabra buscada');
+
+  }
+
 }
