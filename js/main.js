@@ -23,50 +23,101 @@ const data = [
   }
 ];
 
-// 1/ Listado de noticias
+// 1/ LISTADO DE NOTICIAS
 // Creo una función que me solucione el trabajo aunque podría solucionarlo sin funciones. A mi función le pasaré el array de noticias con el parámetro newsData
 const printNews = (newsData) => {
-  // busco el UL donde voy a poner las noticias
+  // Busco el UL donde voy a poner las noticias
   const newsItems = document.querySelector('.news');
 
-  // recorro el array de noticias
+  // Recorro el array de noticias
   for (const item of newsData) {
-    // creando cada li
+    // Creando cada li
     const newsItem = `
       <li class="news__item">
         <h2 class="news__title">${item.title}</h2>
         <img class="news__image" src="${item.image}" alt="${item.title}">
       </li>
     `;
-    // y añadiéndolo al UL (se pueden usar otras formas)
+    // Y añadiéndolo al UL (se pueden usar otras formas)
     newsItems.insertAdjacentHTML('beforeEnd', newsItem);
   }
 };
 
-// llamo a mi función que me escribe las noticias y le paso el array de datos
-printNews(data);
+// Llamo a mi función que me escribe las noticias y le paso el array de datos
+//printNews(data);
 
 
 
-// 2/ Marte, el planeta rojo
+// 2/ MARTE, EL PLANETA ROJO
 // Igual que antes, me ha parecido guay crearme una función que me ejecute la tarea
 const highlightMarsRelatedNews = () => {
-  // busco todos los LI
+  // Busco todos los LI
   const newsItemList = document.querySelectorAll('.news__item');
 
-  // recorro mi lista de LIs
+  // Recorro mi lista de LIs
   for (const item of newsItemList) {
-    // recogiendo en una variable el contenido del título que hay dentro de cada LI
+    // Recogiendo en una variable el contenido del título que hay dentro de cada LI
     const itemTitle = item.querySelector('.news__title').innerHTML;
 
-    // y compruebo si contiene la cadena 'Mars' o 'Martian'
+    // Y compruebo si contiene la cadena 'Mars' o 'Martian'
     if ( (itemTitle.includes('Mars')) || (itemTitle.includes('Martian')) ) {
-      // si cualquiera de las condiciones del if es verdadera le aplico la clase pedida (recordad que hay que añadir los estilos en el scss indicado)
+      // Si cualquiera de las condiciones del if es verdadera le aplico la clase pedida (recordad que hay que añadir los estilos en el scss indicado)
       item.classList.add('news__item--from-mars');
     }
   }
 };
 
 // Ahora llamo a mi función para que haga lo que le dicho que haga :)
-highlightMarsRelatedNews();
+//highlightMarsRelatedNews();
 
+
+
+// 3/ EN EL ESPACIO NADIE PUEDE OIR TUS FETCHS
+// Primero comento lo anterior como he hecho funciones, me basta con comentar las llamadas a las funciones (líneas 47 y 71)
+// Ahora guardo en una variable la url para mi petición
+var remoteNews = 'https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/news.json';
+
+// Como soy de funciones voy a crear una que cuando reciba un array, me lo pinte
+function showNews(arrayOfNews) {
+  // Localizo el UL donde voy a insertar las noticias
+  var newsList = document.querySelector('.news');
+
+  // Recorro el array que me pasan por parámetro
+  for (var n = 0; n < arrayOfNews.length; n++) {
+    // Y almaceno, por cada item, el título y la ruta de la imagen
+    var title = arrayOfNews[n].title;
+    var image = arrayOfNews[n].image;
+
+    // Creo mi variable donde irá cada LI
+    var item = '<li class="news__item">';
+    // Con su título
+    item += '<h2 class="news__title">' + title + '</h2>';
+    // Con su imagen
+    item += '<img class="news__image" src="' + image + '" alt="' + title + '">';
+    // Con su cierre de LI
+    item += '</li>';
+
+    // Y añado cada item
+    newsList.insertAdjacentHTML('beforeEnd', item);
+  }
+}
+
+// También creo la función que va a pedir los datos
+function getNews(fileURL) {
+  // Hago la petición a la url que me pasen por parámetro
+  fetch(fileURL)
+    .then(function(res){
+      // La convierto a JSON
+      return res.json();
+    })
+    .then(function(json){
+      // Cojo el array de noticias
+      var news = json.news;
+
+      // Y llamo a la función que escribe las noticias, pasándole el array de noticias
+      showNews(news);
+    })
+}
+
+// Ya sólo me queda llamar a la función que hace la petición, y pasarle la url
+getNews(remoteNews);
