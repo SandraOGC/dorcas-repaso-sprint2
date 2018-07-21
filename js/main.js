@@ -1,6 +1,4 @@
-"use strict";
-
-const element = document.querySelector(".news");
+'use strict';
 
 const data = [
   {
@@ -25,21 +23,6 @@ const data = [
   }
 ];
 
-// const lista = document.querySelector(".news");
-
-// for (const i of data) {
-//   const lista = document.createElement("li");
-//   const title = document.createElement("h2");
-//   const text = document.createTextNode(data[i].title);
-
-//   lista.appendChild(list);
-//   list.appendChild(title);
-
-//   list.classList.add("news__item");
-//   title.classList.add("news__title");
-//   title.appendChild(text);
-// }
-
 const noticias = newsData => {
   const elementos = document.querySelector('.news');
 
@@ -55,3 +38,17 @@ const noticias = newsData => {
 };
 
 noticias(data);
+
+const newsMars = () => {
+  const newsItem = document.querySelector ('.news__item');
+
+  for (const item of newsItem) {
+    const itemTitulo = item.querySelector('.news__title').innerHTML;
+
+    if ( (itemTitulo.includes('Mars')) || (itemTitulo.includes('Martian')) ) {
+      item.classList.add('news__item--from-mars');
+    }
+  }
+};
+
+newsMars ();
