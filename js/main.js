@@ -1,9 +1,9 @@
 'use strict';
 
 var newElement = document.querySlector('.news');
-var list = document.querySlector('.news__item');
-var title = document.querySlector('.news__title');
-var image = document.querySlector('.news__image');
+// var list = document.querySlector('.news__item');
+// var title = document.querySlector('.news__title');
+// var image = document.querySlector('.news__image');
 
 const data = [
   {
@@ -28,12 +28,12 @@ const data = [
   }
 ];
 
-function newElement(){
+// function addElement(){
 
 for (var i = 0; i < data.length; i++){
-  // newElement.innerHTML
+newElement.innerHTML += '<li class="news__item"><h2 class="news__title"> </h2><img  class="new__image" src=" " alt="">';
 
-  }}
-newElement.appendChild(list);
-list.appendChild(title);
-list.appendChild(image);
+  // }}
+// newElement.appendChild(list);
+// list.appendChild(title);
+// list.appendChild(image);
