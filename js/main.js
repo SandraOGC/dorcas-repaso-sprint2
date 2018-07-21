@@ -40,7 +40,7 @@ const noticias = newsData => {
 noticias(data);
 
 const newsMars = () => {
-  const newsItem = document.querySelector ('.news__item');
+  const newsItem = document.querySelectorAll ('.news__item');
 
   for (const item of newsItem) {
     const itemTitulo = item.querySelector('.news__title').innerHTML;
