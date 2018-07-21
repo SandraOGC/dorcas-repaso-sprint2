@@ -22,3 +22,20 @@ const data = [
     image: 'https://via.placeholder.com/200x100'
   }
 ];
+
+console.log(data[1]);
+const news = document.querySelector('.news');
+
+
+for(var i = 0; i < data.length; i++){
+  var listElement = document.createElement('li');
+  listElement.classList.add('.listElement');
+  news.appendChild(listElement);
+  var filmTitle =document.createElement('p');
+  listElement.appendChild(filmTitle);
+  var filmImage = document.createElement('img');
+  listElement.appendChild(filmImage);
+
+}
+
+console.log(news);
