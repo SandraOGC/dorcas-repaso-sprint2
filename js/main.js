@@ -22,3 +22,11 @@ const data = [
     image: 'https://via.placeholder.com/200x100'
   }
 ];
+
+
+const newItem = document.createElement('li');
+
+const newContent = document.createTextNode(data);
+
+newItem.appendChild(newContent);
+console.log(newItem); 
