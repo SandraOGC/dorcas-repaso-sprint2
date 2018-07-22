@@ -23,33 +23,10 @@ const data = [
   }
 ];
 
-
-//const newItem = document.createElement('li');
-//const newContent = document.getAttribute(data);
-//newItem.appendChild(newContent);
-//console.log(newItem); 
-
-//function showList(event){
-// const gimmeArr = event.currentTarget.getAttribute('data.value');
-//alert(event.currentTarget.innerHTML + data.value);
-//}
-//console.log(showList);
-
-//const newItem = document.createElement('li');
-//const ul = document.querySelector('.news');
-//ul.setAttribute('data', 'title'); 
-//newItem.appendChild(ul);
-
-const newsElem = document.querySelector('.news');
-
-const newLi = document.createElement('li');
-//newLi.innerHTML(data[0]); 
-newLi.className = 'item item--1bis';
-const newItemContent = document.createTextNode('Item 1 bis');
-newLi.appendChild(newItemContent);
-//console.log(newLi);
-
-  for (let i=0; i< 5; i++) {
-    newLi = '<li class="news__item"></li>';
-    newsList.innerHTML += newLi;
-  }
+var item = '';
+var ul = document.querySelector('.news');
+for (item of data){ ;
+var newLi =`<li src='${data}'></li>`;
+ul.innerHTML += `${item.data}`;
+}
+console.log(item)
