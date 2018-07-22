@@ -1,5 +1,5 @@
 'use strict';
-//MUEVE EVERYTHING Y CAMBIA LAS CLASES EN EL SCSS
+//MOVER EVERYTHING Y CAMBIA LAS CLASES EN EL SCSS
 
 const newsElement = document.querySelector('.news');
 
@@ -32,7 +32,7 @@ const addList = () => {
     const news__Item = document.createElement ('ĺi');
     const news__title = document.createElement ('h2');
     const news__image = document.createElement('img');
-    //poner clases 
+    //poner clases
     news__Item.classList.add('liElement');
     news__title.classList.add('titleElement');
     news__image.classList.add('imageElement');
@@ -46,7 +46,14 @@ const addList = () => {
     //src es la ruta de la imagen donde meto su URL
     news__image.src = planet.image;
 
+    //EJERCICIO 2
+
+    if (news__title.includes('Mars') || news__title.includes('Martians')){
+      news__Item.classList.add('news__item--from-mars');
+    } else {
+      console.log('No contiene la palabra Mars ni Martian');
+    }
   }
 };
-
+//por último, tengo que hacer la llamada de la función para que se ejecute
 addList();
