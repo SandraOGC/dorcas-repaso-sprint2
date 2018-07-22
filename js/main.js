@@ -23,21 +23,43 @@ const data = [
   }
 ];
 
-const noticias = newsData => {
-  const elementos = document.querySelector('.news');
 
-  for (const item of newsData) {
-    const elemento = `
-      <li class="news__item">
-        <h2 class="news__title">${item.title}</h2>
-        <img class="news__image" src="${item.image}" alt="${item.title}">
-      </li>
-    `;
-    elementos.insertAdjacentHTML('beforeEnd', elemento);
-  }
-};
+const lista = document.querySelector('.news');
 
-noticias(data);
+for (const bucle of data){
+  const list = document.createElement('li');
+  const titulo = document.createElement('h2');
+  const photo = document.createElement('img');
+
+  lista.appendChild(list);
+  list.appendChild(titulo);
+  list.appendChild(photo);
+
+  const text = document.createTextNode(bucle.title);
+  photo.src = bucle.image;
+
+  list.classList.add('news__item');
+  titulo.classList.add('news__title');
+  photo.classList.add('news__image');
+  titulo.appendChild(text);
+}
+
+
+// const noticias = newsData => {
+//   const elementos = document.querySelector('.news');
+
+//   for (const item of newsData) {
+//     const elemento = `
+//       <li class="news__item">
+//         <h2 class="news__title">${item.title}</h2>
+//         <img class="news__image" src="${item.image}" alt="${item.title}">
+//       </li>
+//     `;
+//     elementos.insertAdjacentHTML('beforeEnd', elemento);
+//   }
+// };
+
+// noticias(data);
 
 const newsMars = () => {
   const newsItem = document.querySelectorAll ('.news__item');
