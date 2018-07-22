@@ -24,41 +24,44 @@ const data = [
     image: 'https://via.placeholder.com/200x100'
   }
 ];
+function printNews(){
+  for (var i = 0; i < data.length; i++){
+    // creo los li
+    var newItems = document.createElement('li');
+    // doy clase a los li
+    newItems.classList.add('news__item');
+    // creo los titulos
+    var titulo= document.createElement('h2');
+    titulo.classList.add('news__title');
+    var content = document.createTextNode(data[i].title);
 
-for (var i = 0; i < data.length; i++){
-  // creo los li
-  var newItems = document.createElement('li');
-  // doy clase a los li
-  newItems.classList.add('news__item');
-  // creo los titulos
-  var titulo= document.createElement('h2');
-  titulo.classList.add('news__title');
-  var content = document.createTextNode(data[i].title);
+    // creo las imagenes
+    var photo= document.createElement('img');
+    photo.classList.add('news__image');
+    photo.src = data[i].image;
 
-  // creo las imagenes
-  var photo= document.createElement('img');
-  photo.classList.add('news__image');
-  photo.src = data[i].image;
+    titulo.appendChild(content);
+    newItems.appendChild(titulo);
+    newItems.appendChild(photo);
 
+    // para meter el li en el lu
+    lista.appendChild(newItems);
+  }
 
-  titulo.appendChild(content);
-  newItems.appendChild(titulo);
-  newItems.appendChild(photo);
-
-  // para meter el li en el lu
-  lista.appendChild(newItems);
 }
+printNews();
 // ejercico2
 
 var listaItem = document.querySelectorAll('.news__item');
 
-for (var j = 0; j < listaItem.length; j++){
-  var contentTitle = document.querySelector('.news__title').innerHTML;
-  console.log(contentTitle);
+function selectTitle(){
 
-  if ( (contentTitle.includes('Mars')) || (contentTitle.includes('Martian')) )  {
-    listaItem.classList.add('news__item--from-mars');
-    console.log('El título contiene la palabra buscada');
-
+  for (var j = 0; j < listaItem.length; j++){
+    var contentTitle = listaItem[j].children[0].innerHTML;
+    console.log(contentTitle);
+    if ( (contentTitle.includes('Mars')) || (contentTitle.includes('Martian')) )  {
+      listaItem[j].classList.add('news__item--from-mars');
+    }
   }
 }
+selectTitle();
