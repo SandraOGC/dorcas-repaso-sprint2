@@ -9,6 +9,7 @@ Son opcionales y no sustituyen el repaso personal.
 - [1/ Listado de noticias](#1-listado-de-noticias)
 - [2/ Marte, el planeta rojo](#2-marte-el-planeta-rojo)
 - [3/ En el espacio nadie puede oir tus fetchs](#3-en-el-espacio-nadie-puede-oir-tus-fetchs)
+- [4/ Ahora me ves...](#4-ahora-me-ves)
 
 <!-- /TOC -->
 
@@ -60,3 +61,21 @@ Todo el mundo sabe que en el espacio la comunicación es remota, así que vamos 
 https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/news.json
 ```
 Tendremos que comentar el código anterior y volver a pintar nuestras noticias, pero esta vez las recibidas tras hacer la petición a nuesta API de noticias de casa.
+
+## 4/ Ahora me ves...
+Vamos a añadir una pequeña funcionalidad a nuestro listado de noticias: **por defecto no se van a ver las imágenes**, pero al hacer click haremos que sean visibles o vuelvan a ser invisibles... y todo cambiando **1 sola clase** que aplicaremos al contenedor general de cada noticia, el LI.
+
+Recapitulando:
+- Por defecto todos los LI tendrán una clase extra: `news__item--no-image-visible` que hará que la imagen del LI no se vea
+- Al hacer click en cada noticia la quitaremos si ya la tenía o la pondremos si no la tenía de manera que al hacer click aparecerá o desaparecerá la imagen.
+
+***
+
+Podéis usar estos estilos:
+```scss
+.news__item--no-image-visible {
+  .news__image {
+    display: none;
+  }
+}
+```
