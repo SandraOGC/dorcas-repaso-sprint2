@@ -24,9 +24,26 @@ const data = [
 ];
 
 
-const newItem = document.createElement('li');
+//const newItem = document.createElement('li');
+//const newContent = document.getAttribute(data);
+//newItem.appendChild(newContent);
+//console.log(newItem); 
 
-const newContent = document.createTextNode(data);
+//function showList(event){
+// const gimmeArr = event.currentTarget.getAttribute('data.value');
+//alert(event.currentTarget.innerHTML + data.value);
+//}
+//console.log(showList);
 
-newItem.appendChild(newContent);
-console.log(newItem); 
+//const newItem = document.createElement('li');
+//const ul = document.querySelector('.news');
+//ul.setAttribute('data', 'title'); 
+//newItem.appendChild(ul);
+
+const newsElem = document.querySelector('.news');
+const newLi = document.createElement('li');
+//newLi.innerHTML(data[0]); 
+newLi.className = 'item item--1bis';
+var newItemContent = document.createTextNode('Item 1 bis');
+newLi.appendChild(newItemContent);
+console.log(newLi);
