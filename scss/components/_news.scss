@@ -21,3 +21,17 @@
   display: block;
   width: 100%;
 }
+
+.news__item--from-mars {
+  border-color: #BC2731;
+  box-shadow: 0 1px 4px rgba(#BC2731, .6);
+
+  .titleElement {
+      color: #BC2731;
+    }
+
+  .imageElement {
+    box-shadow: 0 0 0 3px rgba(#BC2731, .8);
+    border-radius: 5px;
+  }
+}
