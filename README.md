@@ -3,6 +3,14 @@ Ejercicios de refuerzo del sprint2
 
 Son opcionales y no sustituyen el repaso personal.
 
+<!-- TOC depthFrom:2 -->
+
+- [Pautas](#pautas)
+- [1/ Listado de noticias](#1-listado-de-noticias)
+- [2/ Marte, el planeta rojo](#2-marte-el-planeta-rojo)
+- [3/ En el espacio nadie puede oir tus fetchs](#3-en-el-espacio-nadie-puede-oir-tus-fetchs)
+
+<!-- /TOC -->
 
 ## Pautas
 1. Clona el repo.
@@ -45,3 +53,10 @@ En el archivo **scss/components/_news.scss** habrá que añadir estas clases:
   }
 }
 ```
+
+## 3/ En el espacio nadie puede oir tus fetchs
+Todo el mundo sabe que en el espacio la comunicación es remota, así que vamos a pedir las noticias a casa. Para ello nos han dado la siguiente url:
+```
+https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/news.json
+```
+Tendremos que comentar el código anterior y volver a pintar nuestras noticias, pero esta vez las recibidas tras hacer la petición a nuesta API de noticias de casa.
