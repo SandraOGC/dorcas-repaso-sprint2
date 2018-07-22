@@ -1,13 +1,5 @@
 'use strict';
-
-const newElement = document.querySlector('.news');
-//otro planteamiento sin acabar.
-var new__Item = document.createElement ('ĺi');
-var news__title = document.createElement ('h2');
-var new__image = document.createElement('image');
-// var list = document.querySlector('.news__item');
-// var title = document.querySlector('.news__title');
-// var image = document.querySlector('.news__image');
+const newsElement = document.querySelector('.news');
 
 const data = [
   {
@@ -32,12 +24,35 @@ const data = [
   }
 ];
 
+const addList = () => {
+  for(let planet of data) {
+    //crear elementos
+    const news__Item = document.createElement ('ĺi');
+    const news__title = document.createElement ('h2');
+    const news__image = document.createElement('image');
+    //poner clases
+    news__Item.classList.add('liElement');
+    news__title.classList.add('h2Element');
+    news__image.classList.add('imageElement');
+    //hijos
+    newsElement.appendChild(news__Item);
+    news__Item.appendChild(news__title);
+    news__Item.appendChild(news__image);
+    //pintar elementos
+    news__title.innerHTML = data.title;
+    news__image.src = data.image;
+
+  }
+};
+
+addList();
+
 // function addElement(){
-// var newItem = document.createElement('li');
+// var newItem = document.createElement('li');  // newElement.innerHTML += '<li class="news__item"><h2 class="news__title">${data[i].title} </h2><img  class="new__image" src="${data[i].image}" alt="${data[i].title}"></li>';
 // console.log(newItem);
 
 for (let i = 0; i < data.length; i++){
-  
+
   // newElement.innerHTML += '<li class="news__item"><h2 class="news__title">${data[i].title} </h2><img  class="new__image" src="${data[i].image}" alt="${data[i].title}"></li>';
 
 
