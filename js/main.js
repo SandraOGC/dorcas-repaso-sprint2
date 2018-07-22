@@ -1,8 +1,6 @@
 'use strict';
 
 var lista = document.querySelector('.news');
-var listaItem = document.querySelectorAll('.news__item');
-
 
 const data = [
   {
@@ -34,7 +32,7 @@ for (var i = 0; i < data.length; i++){
   newItems.classList.add('news__item');
   // creo los titulos
   var titulo= document.createElement('h2');
-  titulo.classList.add('news__title')
+  titulo.classList.add('news__title');
   var content = document.createTextNode(data[i].title);
 
   // creo las imagenes
@@ -52,13 +50,15 @@ for (var i = 0; i < data.length; i++){
 }
 // ejercico2
 
-for (var i = 0; i < listaItem.length; i++){
-  var contentTitle = document.querySelectorAll('.news__title').innerHTML;
+var listaItem = document.querySelectorAll('.news__item');
+
+for (var j = 0; j < listaItem.length; j++){
+  var contentTitle = document.querySelector('.news__title').innerHTML;
+  console.log(contentTitle);
 
   if ( (contentTitle.includes('Mars')) || (contentTitle.includes('Martian')) )  {
     listaItem.classList.add('news__item--from-mars');
     console.log('El título contiene la palabra buscada');
 
   }
-
 }
