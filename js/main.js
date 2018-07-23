@@ -25,8 +25,15 @@ const data = [
 
 var item = '';
 var ul = document.querySelector('.news');
+//function hola(data) {
 for (item of data){ ;
-var newLi =`<li src='${data}'></li>`;
-ul.innerHTML += `${item.data}`;
+var newLi = document.createElement('li');
+newLi.innerHTML += (data.title);
 }
+console.log(newLi)
 console.log(item)
+console.log(ul)
+
+// for (x=0;x<data.length;x++){
+//   document.write(data[title] + " ");
+// }
