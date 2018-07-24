@@ -2,24 +2,24 @@
 
 // const data = [
 //   {
-//     title: "Asteroids 101",
-//     image: "https://via.placeholder.com/200x100"
+//     title: 'Asteroids 101',
+//     image: 'https://via.placeholder.com/200x100'
 //   },
 //   {
-//     title: "Life on Mars",
-//     image: "https://via.placeholder.com/200x100"
+//     title: 'Life on Mars',
+//     image: 'https://via.placeholder.com/200x100'
 //   },
 //   {
-//     title: "Martians invade Earth",
-//     image: "https://via.placeholder.com/200x100"
+//     title: 'Martians invade Earth',
+//     image: 'https://via.placeholder.com/200x100'
 //   },
 //   {
-//     title: "Humans aren't real",
-//     image: "https://via.placeholder.com/200x100"
+//     title: 'Humans aren't real',
+//     image: 'https://via.placeholder.com/200x100'
 //   },
 //   {
-//     title: "Space The Final Frontier",
-//     image: "https://via.placeholder.com/200x100"
+//     title: 'Space The Final Frontier',
+//     image: 'https://via.placeholder.com/200x100'
 //   }
 // ];
 
@@ -48,9 +48,9 @@
 
 //   for (const item of newsData) {
 //     const elemento = `
-//       <li class="news__item">
-//         <h2 class="news__title">${item.title}</h2>
-//         <img class="news__image" src="${item.image}" alt="${item.title}">
+//       <li class='news__item'>
+//         <h2 class='news__title'>${item.title}</h2>
+//         <img class='news__image' src='${item.image}' alt='${item.title}'>
 //       </li>
 //     `;
 //     elementos.insertAdjacentHTML('beforeEnd', elemento);
@@ -86,7 +86,7 @@ const show = () => {
       return respuesta.json();
     })
     .then(function(respuesta2) {
-      console.log(respuesta2);
+      // console.log(respuesta2);
       noticias = respuesta2.news;
 
       for (const noticia of noticias) {
@@ -104,8 +104,27 @@ const show = () => {
 
         lista.append(titulo, photo);
         list.appendChild(lista);
+
+        if (noticia.respuesta2 === noticia.respuesta2) {
+          photo.classList.remove("news__image");
+          photo.classList.toggle("news__item--no-image-visible");
+        }
+
+        visible();
       }
     });
 };
 
 show();
+
+function visible() {
+  var allLi = document.querySelectorAll("news__item--no-image-visible");
+  for (const oneLi of allLi) {
+    oneLi.addEventListener("click", showImage);
+  }
+}
+
+function showImage(event) {
+  event.currentTarget.classList.toggle("news__image");
+}
+
