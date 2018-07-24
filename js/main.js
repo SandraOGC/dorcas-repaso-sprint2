@@ -87,7 +87,7 @@ var lista = document.querySelector('.news');
         newItems.addEventListener('click', appear);
 
         // doy clase a los li
-        newItems.classList.add('news__item');
+        newItems.classList.add('news__item', 'news__item--no-image-visible');
         // creo los titulos
         var titulo= document.createElement('h2');
         titulo.classList.add('news__title');
