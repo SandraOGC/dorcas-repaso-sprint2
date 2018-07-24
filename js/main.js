@@ -82,6 +82,10 @@ var lista = document.querySelector('.news');
       for (var x = 0; x < newsAppi.news.length; x++){
 
         var newItems = document.createElement('li');
+        // creo un evento para todos las imagenes y la funcion  la tengo abajo
+        // ejercici 4
+        newItems.addEventListener('click', appear);
+
         // doy clase a los li
         newItems.classList.add('news__item');
         // creo los titulos
@@ -93,6 +97,7 @@ var lista = document.querySelector('.news');
         var photo= document.createElement('img');
         photo.classList.add('news__image');
         photo.src = newsAppi.news[x].image;
+
 
         titulo.appendChild(content);
         newItems.appendChild(titulo);
@@ -108,3 +113,7 @@ var lista = document.querySelector('.news');
 
 }
 printApi();
+//ejercicio 4
+function appear(event) {
+  event.currentTarget.classList.toggle('news__item--no-image-visible');
+}
