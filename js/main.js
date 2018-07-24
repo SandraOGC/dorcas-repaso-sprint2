@@ -54,17 +54,17 @@
 // }
 
 // ejercicio3;
-var news=document.querySelector('.news');
+var news = document.querySelector('.news');
 fetch('https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/news.json')
-  .then(function(response) {
+  .then(function (response) {
     return response.json();
   })
-  .then(function(myJson) {
+  .then(function (myJson) {
     console.log(myJson.news[2]);
-    for ( var i=0 ; i< myJson.news.length; i++){
+    for (var i = 0; i < myJson.news.length; i++) {
       var listElement = document.createElement('li');
       news.appendChild(listElement);
-      listElement.classList.add('news__item');
+      listElement.classList.add('news__item', 'news__item--no-image-visible');
 
       // creando título
       var elementTitle = document.createElement('h2');
@@ -72,7 +72,7 @@ fetch('https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/dat
       listElement.appendChild(elementTitle);
       var title = myJson.news[i].title;
       elementTitle.innerHTML = title;
-      
+
       // creando img
       var elementImage = document.createElement('img');
       elementImage.classList.add('news__image');
@@ -80,10 +80,29 @@ fetch('https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/dat
       var image = myJson.news[i].image;
       elementImage.setAttribute('src', image);
       elementImage.setAttribute('alt', title);
-    
-      
-    
-} }
-);
+
+      if (elementTitle.includes('Mars')) {
+        listElement.classList.add('news__item--from-mars');
+      }
+      else if (elementTitle.includes('Martian')) {
+        listElement.classList.add('news__item--from-mars');
+      }
+      else {
+        listElement.classList.add('news__item--no-martians');
+      }
+      function showAndHide() {
+        if (listElement.includes('news__item--no-image-visible')) {
+          listElement.classList.remove('news__item--no-image-visible');
+        }
+        else {
+          listElement.classList.add('news__item--no-image-visible');
+        }
+      }
+      listElement.addEventListener('click', showAndHide);
+    }
+    }
+   
+  );
+
 
 // console.log(myJson.news[1].title);
