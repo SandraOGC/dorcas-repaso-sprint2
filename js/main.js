@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // const data = [
 //   {
@@ -23,7 +23,6 @@
 //   }
 // ];
 
-
 // const lista = document.querySelector('.news');
 
 // for (const bucle of data){
@@ -43,7 +42,6 @@
 //   photo.classList.add('news__image');
 //   titulo.appendChild(text);
 // }
-
 
 // const noticias = newsData => {
 //   const elementos = document.querySelector('.news');
@@ -75,20 +73,40 @@
 
 // newsMars ();
 
-
-
-
 //ejercicio 3
 
 var list = document.querySelector(".news");
 var noticias = [];
 
-
-function show() {
-  fetch("http://api.tvmaze.com/search/shows?q=")
+const show = () => {
+  fetch(
+    "https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/news.json"
+  )
     .then(function(respuesta) {
       return respuesta.json();
     })
     .then(function(respuesta2) {
       console.log(respuesta2);
       noticias = respuesta2;
+
+      for (const newNoticia of noticias) {
+        const lista = document.createElement("li");
+        const titulo = document.createElement("h2");
+        const photo = document.createElement("img");
+
+        list.appendChild(lista);
+        list.appendChild(titulo);
+        list.appendChild(photo);
+
+        const text = document.createTextNode(newNoticia.title);
+        photo.src = newNoticia.image;
+
+        list.classList.add("news__item");
+        titulo.classList.add("news__title");
+        photo.classList.add("news__image");
+        titulo.appendChild(text);
+      }
+    });
+};
+
+show();
