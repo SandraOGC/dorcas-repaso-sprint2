@@ -87,24 +87,23 @@ const show = () => {
     })
     .then(function(respuesta2) {
       console.log(respuesta2);
-      noticias = respuesta2;
+      noticias = respuesta2.news;
 
-      for (const newNoticia of noticias) {
+      for (const noticia of noticias) {
         const lista = document.createElement("li");
         const titulo = document.createElement("h2");
         const photo = document.createElement("img");
 
-        list.appendChild(lista);
-        list.appendChild(titulo);
-        list.appendChild(photo);
-
-        const text = document.createTextNode(newNoticia.title);
-        photo.src = newNoticia.image;
-
-        list.classList.add("news__item");
+        lista.classList.add("news__item");
         titulo.classList.add("news__title");
         photo.classList.add("news__image");
+
+        const text = document.createTextNode(noticia.title);
         titulo.appendChild(text);
+        photo.src = noticia.image;
+
+        lista.append(titulo, photo);
+        list.appendChild(lista);
       }
     });
 };
