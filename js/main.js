@@ -126,14 +126,14 @@ function printPaleta(){
       return response.json();
 
     })
-    .then(function(newsPaleta){
-      for (var y = 0; y < newsPaleta.news.length; y++){
-        // // creo los li
-        // var newItems = document.createElement('li');
-        // // Creo los divs
-        // var newbox = document.createElement('div');
-        // newbox.style = newsPaleta.news[y].color;
+    .then(function(newPaleta){
 
+      for (var y = 0; y < newPaleta.palettes[0].colors.length; y++){
+        console.log(newPaleta.palettes[0]);
+        // creo los li
+        var newItems = document.createElement('li');
+        newItems.style = newPaleta.palettes[0].colors[y];
+        lista.appendChild(newItems);
 
       }
 
