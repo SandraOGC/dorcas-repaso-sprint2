@@ -10,6 +10,7 @@ Son opcionales y no sustituyen el repaso personal.
 - [2/ Marte, el planeta rojo](#2-marte-el-planeta-rojo)
 - [3/ En el espacio nadie puede oir tus fetchs](#3-en-el-espacio-nadie-puede-oir-tus-fetchs)
 - [4/ Ahora me ves...](#4-ahora-me-ves)
+- [5/ Todo es color entre tú y tus arrays...](#5-todo-es-color-entre-tú-y-tus-arrays)
 
 <!-- /TOC -->
 
@@ -79,3 +80,19 @@ Podéis usar estos estilos:
   }
 }
 ```
+
+## 5/ Todo es color entre tú y tus arrays...
+Vamos a cambiar de tercio y sacar a la diseñadora que llevamos dentro: vamos a pintar paletas, a lo loco.
+
+Esta vez tenemos una URL **`https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/palette.json`** que nos devuelve datos de una paleta y tenemos que pintarla como en el ejemplo:
+
+![Propuesta de diseño](https://github.com/Adalab/dorcas-repaso-sprint2/raw/master/images/paleta.png)
+
+Pero hay unos requisitos:
+* Hay que generar los estilos en un archivo _palette.scss que integraremos en nuestro sistema de estilos
+* Podemos crear los estilos que estimemos oportunos pero el color de la paleta lo añadiremos con un atributo `style=""` en cada cuadrado, es decir, si cada cuadrado fuese un **div** podría quedar algo así:
+
+  ```
+    <div class="color__item" style="background-color:#ffcc00"></div>
+  ```
+  De esta manera aplicaremos el color a cada cuadrado.

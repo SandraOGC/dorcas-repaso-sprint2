@@ -1,5 +1,10 @@
 body {
-  background: mix(orange,$color-white, 2%);
+  background: #eee;
   color: mix(orange, $color-black, 20%);
+  font-family: arial, sans-serif;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }

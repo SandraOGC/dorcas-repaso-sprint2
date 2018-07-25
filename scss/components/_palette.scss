@@ -1,0 +1,23 @@
+.palette {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.palette__inner {}
+.pallete__name {
+  color: #414141;
+  font-style: italic;
+  margin: 0 0 10px;
+}
+.colors {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  box-shadow: 0 0 6px rgba(#000, .3);
+}
+.color {
+  background: pink;
+  width: 100px;
+  height: 100px;
+}

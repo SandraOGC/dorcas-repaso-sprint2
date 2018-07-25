@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 const data = [
   {
     title: 'Asteroids 101',
@@ -145,5 +145,77 @@ function addListenerToNewsItems() {
 };
 
 // Pero no la voy a llamar a continuación sino justo después de llamar al final de ShowNews (línea 103), para asegurarme de que cuando llame a mi función los LI existan ya.
+*/
+
+// 5/ Todo es color entre tú y tus arrays...
+
+/*
+Antes de empezar tengo que planificar qué html voy a generar, así que me hago uno de prueba y así ajusto los estilos:
+
+  <ul class="palettes">
+    <li class="palette">
+      <div class="palette__inner">
+        <h2 class="pallete__name">Space Ship</h2>
+        <ul class="colors">
+          <li class="color" style="background-color:#FFBF2E;"></li>
+          <li class="color" style="background-color:#E85E0C;"></li>
+          <li class="color" style="background-color:#FF0000;"></li>
+          <li class="color" style="background-color:#C70CE8;"></li>
+          <li class="color" style="background-color:#330DFF;"></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+
+  Teniendo claro con lo que voy a trabajar es mas fácil ;)
+*/
+
+
+// Primero hago referencia a los elementos del dom con los que voy a trabajar
+const palettes = document.querySelector('.palettes');
+// Y me guardo la url en otra variable
+const url = 'https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/palette.json';
+
+// me hago una función para pintar las paletas que luego llamaré cuando quiera y le paso por parámetro la url que me han dado y que guardé en una url
+function drawPalettes(paletteURL) {
+  // hago la petición
+  fetch(paletteURL)
+      // Y la respuesta la convierto en json
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(json){
+      // y saco el array principal
+      const remotePalettes = json.palettes;
+
+      // Voy a sacar a una variable la lista de colores
+      for (const item of remotePalettes) {
+        // Por cada color (el array interior) genero un li con mis clases y el color metido por style
+        let colors = '';
+        for (const col of item.colors) {
+          colors += `<li class="color" style="background-color:#${col};"></li>`;
+        }
+
+        // compruebo que tengo lo que quiero
+        console.log('> ' + colors);
+
+        // ahora me creo el li superior de cada paleta
+        const pal = `
+          <li class="palette">
+            <div class="palette__inner">
+              <h2 class="pallete__name">${item.name}</h2>
+              <ul class="colors">${colors}</ul>
+            </div>
+          </li>
+        `;
+
+        // Y lo voy añadiendo, uno a uno, a la lista
+        palettes.insertAdjacentHTML('beforeEnd', pal);
+      }
+    });
+}
+
+// Llamo a mi función y le paso la url :)
+drawPalettes(url);
 
 
