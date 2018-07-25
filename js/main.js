@@ -23,14 +23,25 @@ const data = [
   }
 ];
 
-for(let i = 0; i<data.length; i++){
-    const list = document.querySelector('.news');
-    const newsList = document.createElement('li');
-    const pic = document.createElement('img');
-    const parr = document.createElement('p');
+const list = document.querySelector('.news');
+const newsList = document.createElement('li');
+const pic = document.createElement('img');
+const parr = document.createElement('p');
+
+function NewsList(){
+  for(let i = 0; i<data.length; i++){
     list.appendChild(newsList);
     newsList.appendChild(pic);
     newsList.appendChild(parr);
     parr.innerHTML = data[i].title;
     pic.src = data[i].image;
+    data[i].className+=" news__item--from-mars";
+    if (newsList.includes('Mars')) {
+      data[i].className+="news__title"; 
+    } else if (newsList.includes('Martian')) {
+      data[i].className+="news__image"; 
+    }
+  }
 }
+
+NewsList();
