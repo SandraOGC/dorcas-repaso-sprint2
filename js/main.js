@@ -1,4 +1,5 @@
-"use strict";
+'use strict';
+const texto = document.querySelector('.parrafo');
 
 // const data = [
 //   {
@@ -75,12 +76,12 @@
 
 //ejercicio 3
 
-var list = document.querySelector(".news");
+var list = document.querySelector('.news');
 var noticias = [];
 
 const show = () => {
   fetch(
-    "https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/news.json"
+    'https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/news.json'
   )
     .then(function(respuesta) {
       return respuesta.json();
@@ -90,41 +91,39 @@ const show = () => {
       noticias = respuesta2.news;
 
       for (const noticia of noticias) {
-        const lista = document.createElement("li");
-        const titulo = document.createElement("h2");
-        const photo = document.createElement("img");
+        const lista = document.createElement('li');
+        const titulo = document.createElement('h2');
+        const photo = document.createElement('img');
 
-        lista.classList.add("news__item");
-        titulo.classList.add("news__title");
-        photo.classList.add("news__image");
+        lista.classList.add('news__item', 'news__item--no-image-visible');
+        titulo.classList.add('news__title');
+        photo.classList.add('news__image');
 
         const text = document.createTextNode(noticia.title);
         titulo.appendChild(text);
         photo.src = noticia.image;
 
         lista.append(titulo, photo);
+        lista.addEventListener('click', showImage);
         list.appendChild(lista);
-
-        if (noticia.respuesta2 === noticia.respuesta2) {
-          photo.classList.remove("news__image");
-          photo.classList.toggle("news__item--no-image-visible");
-        }
-
-        visible();
       }
+
+        // visible();
     });
 };
 
 show();
 
-function visible() {
-  var allLi = document.querySelectorAll("news__item--no-image-visible");
-  for (const oneLi of allLi) {
-    oneLi.addEventListener("click", showImage);
-  }
-}
+// function visible() {
+//   var allLi = document.querySelectorAll('.news__item--no-image-visible');
+//   for (const oneLi of allLi) {
+//     oneLi.addEventListener('click', showImage);
+//   }
+// }
 
 function showImage(event) {
-  event.currentTarget.classList.toggle("news__image");
+  event.currentTarget.classList.toggle('news__item--no-image-visible');
+  texto.innerHTML=event.currentTarget.querySelector('.news__title').innerHTML;
 }
 
+//.innerhtml es para buscar en html el contenido (modificar y consultar)
