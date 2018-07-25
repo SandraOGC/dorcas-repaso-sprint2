@@ -55,4 +55,8 @@ body {
   border-radius: 5px;
 }
 
+.news__item--no-image-visible .news__image {
+  display: none;
+}
+
 /*# sourceMappingURL=main.css.map */
