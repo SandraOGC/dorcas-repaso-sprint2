@@ -1,3 +1,7 @@
+.color-list {
+  display: block;
+}
+
 body {
   background: #fffdfa;
   color: #332100;
@@ -31,6 +35,7 @@ body {
 }
 
 .news__image {
+  display: block;
   width: 100%;
 }
 
@@ -50,7 +55,4 @@ body {
   border-radius: 5px;
 }
 
-.news__item--no-image-visible .news__image {
-    display: none;
-  }
 /*# sourceMappingURL=main.css.map */
