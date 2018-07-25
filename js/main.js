@@ -110,7 +110,6 @@ var lista = document.querySelector('.news');
 
     });
 
-
 }
 printApi();
 //ejercicio 4
