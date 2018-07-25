@@ -31,7 +31,6 @@ body {
 }
 
 .news__image {
-  display: block;
   width: 100%;
 }
 
@@ -50,8 +49,8 @@ body {
   box-shadow: 0 0 0 3px rgba(188, 39, 49, 0.8);
   border-radius: 5px;
 }
-.news__item--no-image-visible .news__image  {
+
+.news__item--no-image-visible .news__image {
     display: none;
-  
-}
+  }
 /*# sourceMappingURL=main.css.map */
