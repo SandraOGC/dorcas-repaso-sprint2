@@ -24,22 +24,13 @@ const data = [
 ];
 
 
-const ul = document.querySelector('.news');
+const UL = document.querySelector('.news');
 
-for (let item of data){ 
-//const [title, imagen] = data;
-const newLi = document.createElement('li');
-const info= document.createTextNode(item);
+for (let movie of data){ 
+  const newLi = document.createElement('li');
+  const newH2= document.createElement('h2');
+  const newImage = document.createElement('img');
 
-newLi.appendChild(info);
-ul.appendChild(newLi);
+  
 
 }
-// console.log(info)
-// console.log(newLi)
-// console.log(item)
-// console.log(ul)
-
-// for (x=0;x<data.length;x++){
-//   document.write(data[title] + " ");
-// }
