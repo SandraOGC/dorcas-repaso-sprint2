@@ -23,16 +23,22 @@ const data = [
   }
 ];
 
-var item = '';
-var ul = document.querySelector('.news');
-//function hola(data) {
-for (item of data){ ;
-var newLi = document.createElement('li');
-newLi.innerHTML += (data.title);
+
+const ul = document.querySelector('.news');
+
+for (let item of data){ 
+//const [title, imagen] = data;
+const newLi = document.createElement('li');
+const info= document.createTextNode(item);
+
+newLi.appendChild(info);
+ul.appendChild(newLi);
+
 }
-console.log(newLi)
-console.log(item)
-console.log(ul)
+// console.log(info)
+// console.log(newLi)
+// console.log(item)
+// console.log(ul)
 
 // for (x=0;x<data.length;x++){
 //   document.write(data[title] + " ");
