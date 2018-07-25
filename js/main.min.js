@@ -80,7 +80,6 @@ var lista = document.querySelector('.news');
     .then(function(newsAppi){
 
       for (var x = 0; x < newsAppi.news.length; x++){
-
         var newItems = document.createElement('li');
         // creo un evento para todos las imagenes y la funcion  la tengo abajo
         // ejercici 4
@@ -120,7 +119,7 @@ function appear(event) {
 
 function printPaleta(){
   var lista = document.querySelector('.news');
-  var appi =' https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/palette.json ';
+  var appi ='https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/palette.json';
   fetch(appi)
     .then(function(response){
       return response.json();
@@ -128,12 +127,18 @@ function printPaleta(){
     })
     .then(function(newPaleta){
 
-      for (var y = 0; y < newPaleta.palettes[0].colors.length; y++){
-        console.log(newPaleta.palettes[0]);
+      for (var y = 0; y < newPaleta.palettes.length; y++){
+        console.log(newPaleta.palettes);
         // creo los li
         var newItems = document.createElement('li');
-        newItems.style = newPaleta.palettes[0].colors[y];
-        lista.appendChild(newItems);
+        newItems.classList.add('box-color');
+        for(var x = 0; x < newPaleta.palettes[y].colors.length;x++){
+          console.log(newPaleta.palettes[y].colors[x]);
+          newItems.style = newPaleta.palettes[y].colors[x];
+          lista.appendChild(newItems);
+        }
+
+
 
       }
 

@@ -51,4 +51,10 @@ body {
   display: none;
 }
 
+.box-color {
+  list-style: none;
+  width: 100px;
+  height: 100px;
+}
+
 /*# sourceMappingURL=main.css.map */
