@@ -22,3 +22,17 @@ const data = [
     image: 'https://via.placeholder.com/200x100'
   }
 ];
+
+function newsLista (){
+  for(let i = 0; i<data.length; i++){
+    const lista = document.querySelector('.news');
+    const newsList = document.createElement('li');
+    lista.appendChild(newsList);
+    newsList.innerHTML = data[i].title;
+    const pic = document.createElement('img');
+    cosas.appendChild(pic);
+    pic.src = data[i].image;
+  }
+}
+
+newsLista();
