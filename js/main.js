@@ -27,8 +27,10 @@ for(let i = 0; i<data.length; i++){
     const list = document.querySelector('.news');
     const newsList = document.createElement('li');
     const pic = document.createElement('img');
+    const parr = document.createElement('p');
     list.appendChild(newsList);
-    list.appendChild(pic);
-    newsList.innerHTML = data[i].title;
+    newsList.appendChild(pic);
+    newsList.appendChild(parr);
+    parr.innerHTML = data[i].title;
     pic.src = data[i].image;
 }
