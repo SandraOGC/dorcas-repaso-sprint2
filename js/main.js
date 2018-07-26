@@ -159,4 +159,4 @@ var cuadrado2= document.querySelector('.color2');
 function cambiar(evento){
   cuadrado2.classList.add('color3');
 }
-cuadrado1.addEventListener('click',cambiar);
+// cuadrado1.addEventListener('click',cambiar);
