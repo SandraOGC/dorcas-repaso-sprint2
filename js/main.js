@@ -58,3 +58,26 @@ for (let movie of data){
   UL.appendChild(newLi);
   //meto los li en la ul
 }
+
+  const LIS = document.querySelectorAll(".news__item");
+  console.log(LIS);
+  //selecciono todos los elementos con la clase news__item
+
+  for (let li of LIS){
+    console.log(li);
+    //compruebo que li es uno de los lis
+
+    const H2 = li.querySelector(".news__title");
+    const TITLE = H2.innerHTML; 
+    console.log(TITLE);
+    //selecciono elementos con la clase news__title y pinta el titulo
+
+  if (TITLE.includes("Mars")) {
+    li.classList.add("news__item--from-mars");
+    //Si dentro de TITLE hay palabra Mars añade clases al li
+
+  } else if (TITLE.includes("Martian")) {
+      li.classList.add("news__item--from-mars");
+      //lo mismo para Martians
+  }
+  }
