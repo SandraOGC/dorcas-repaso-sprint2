@@ -78,36 +78,40 @@
 
 ////Ejercicio 3
 var newsList = document.querySelector('.news');
-var newLi = document.createElement('li');
-var newH2 = document.createElement('h2');
-var newImg = document.createElement('img');
-
-
-
-var button = document.createElement('boton');
-
 
 function showPlanet(){
   fetch ('https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/data/news.json')
     .then(function(response){
       return response.json();
     })
-    .then (function(json){ console.log(json);
-      for(var i= 0; i<json.length; i++){
-        console.log('lol');
+    .then (function(json){
+      //me creo una variable para el json pq ,me da problemas al recorrerlo directamente con la equivalencia de la variable planetNew
+      var planetNew = json.news;
 
+      for(var i= 0; i< planetNew.length; i++){
+      // console.log('ol');
 
+        var newLi = document.createElement('li');
         newLi.classList.add('news__item');
-        newH2.classList.add('news__title');
-        newImg.classList.add('news__image');
 
-        var title = document.createTextNode(json[i].news.title);
-        var image = document.createElement(json[i].news.image);
+        var newH2 = document.createElement('h2');
+        newH2.classList.add('news__title');
+        var title = document.createTextNode(planetNew[i].title);
+
+        var newImg = document.createElement('img');
+        newImg.classList.add('news__image');
+        //creo una variable para la imagen que contiene ya la URL para que me sea más fácil
+        var imageURL = planetNew[i].image;
+        newImg.src = imageURL;
+
 
         newLi.appendChild(newH2);
         newLi.appendChild(newImg);
         newsList.appendChild(newLi);
+        //tengo que meter al newH2 los titulos que son sus hijos.
+        newH2.appendChild(title);
       }
     });
 }
-button.addEventListener('click', showPlanet);
+//finalmente llamo a la función
+showPlanet();
