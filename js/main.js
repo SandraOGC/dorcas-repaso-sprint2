@@ -118,9 +118,9 @@ fetch('https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/dat
       var colorBox = document.createElement('div');
       colorList.appendChild(colorBox);
       colorBox.classList.add('color__item');
-      var giveColor=color[i];
+      var giveColor='#'+color[i];
       console.log(giveColor);
-      colorBox.setAttribute('style', 'background-color: #giveColor');
+      colorBox.setAttribute('style', 'background-color: giveColor');
     }
 
   });
