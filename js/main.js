@@ -115,12 +115,14 @@ fetch('https://raw.githubusercontent.com/Adalab/dorcas-repaso-sprint2/master/dat
     console.log(myJson.palettes);
     var color = myJson.palettes[0].colors;
     for (var i = 0; i < color.length; i++) {
-      var colorBox = document.createElement('div');
+      // var colorBox = document.createElement('div');
+      var colorBox = document.createElement('li');
       colorList.appendChild(colorBox);
       colorBox.classList.add('color__item');
       var giveColor=color[i];
       console.log(giveColor);
-      colorBox.setAttribute('style', 'background-color: #giveColor');
+      //colorBox.setAttribute('style', 'background-color: #giveColor');
+      colorBox.setAttribute('style', 'background-color: #' + giveColor);
     }
 
   });
