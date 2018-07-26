@@ -128,17 +128,22 @@ function printPaleta(){
     .then(function(newPaleta){
 
       for (var y = 0; y < newPaleta.palettes.length; y++){
-        console.log(newPaleta.palettes);
-        // creo los li
-        var newItems = document.createElement('li');
-        newItems.classList.add('box-color');
+        var titulo= document.createElement('h2');
+        var content = document.createTextNode(newPaleta.palettes[y].name);
+        titulo.appendChild(content);
+        lista.appendChild(titulo);
+
         for(var x = 0; x < newPaleta.palettes[y].colors.length;x++){
-          console.log(newPaleta.palettes[y].colors[x]);
-          newItems.style = newPaleta.palettes[y].colors[x];
-          lista.appendChild(newItems);
+          var newItems = document.createElement('li');
+          newItems.classList.add('box-color');
+          console.log(lista);
+          // console.log(newPaleta.palettes[y].colors[x]);
+
+          var color = newPaleta.palettes[y].colors[x];
+          console.log(color);
+          newItems.style.background= '#' + color;
+          lista.appendChild(newItems)
         }
-
-
 
       }
 
@@ -146,4 +151,12 @@ function printPaleta(){
 
 
 }
-printPaleta();
+// printPaleta();
+
+var cuadrado1= document.querySelector('.color1');
+var cuadrado2= document.querySelector('.color2');
+
+function cambiar(evento){
+  cuadrado2.classList.add('color3');
+}
+cuadrado1.addEventListener('click',cambiar);

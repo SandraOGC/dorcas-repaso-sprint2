@@ -1,13 +1,13 @@
-.news {
-  display: grid;
-  grid-template-columns: repeat(3, 200px);
-  grid-gap: 20px;
-  list-style: none;
-  margin: 0 auto;
-  padding: 40px;
-  width: 640px;
-
-}
+// .news {
+//   display: grid;
+//   grid-template-columns: repeat(3, 200px);
+//   grid-gap: 20px;
+//   list-style: none;
+//   margin: 0 auto;
+//   padding: 40px;
+//   width: 640px;
+//
+// }
 .news__item {
   border: 1px solid rgba($color-black, .1);
   padding: 10px;
@@ -41,4 +41,31 @@
    list-style: none;
    width: 100px;
    height: 100px;
+   padding: 0px;
+   margin: 0px;
+}
+.news{
+  display: flex;
+  margin:0px;
+
+}
+.tamano{
+  height: 100px;
+  width: 100px;
+  background: lime;
+  margin: 0 50px;
+}
+.contenedor{
+  display: flex;
+  justify-content: center;
+
+}
+.color1{
+  background: pink;
+}
+.color2{
+  background: red;
+}
+.color3{
+  background: blue;
 }
