@@ -2,14 +2,15 @@
   display: block;
 }
 
+.color__item {
+  width: 40px;
+  height: 40px;
+}
+
 body {
   background: #fffdfa;
   color: #332100;
   margin: 0;
-}
-
-body {
-  background-color: hotpink;
 }
 
 .news {
