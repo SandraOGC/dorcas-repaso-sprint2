@@ -18,6 +18,5 @@ function peticion(appi){
   fetch(appi)
     .then(function(response){
       console.log(response.json());
-
     });
 }
